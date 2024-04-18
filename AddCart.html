@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+</head>
+<body>
+  <h1>Shopping Cart</h1>
+  <div id="cart-content"></div>
+
+  <script>
+    // Retrieve product name from sessionStorage
+    const productName = sessionStorage.getItem('selectedProduct');
+    if (productName) {
+      const cartContent = document.getElementById('cart-content');
+      const cartItem = document.createElement('div');
+      cartItem.textContent = `Product added to cart: ${productName}`;
+      cartContent.appendChild(cartItem);
+    } else {
+      const cartContent = document.getElementById('cart-content');
+      const cartItem = document.createElement('div');
+      cartItem.textContent = 'Your cart is empty.';
+      cartContent.appendChild(cartItem);
+    }
+  </script>
+</body>
+</html>
